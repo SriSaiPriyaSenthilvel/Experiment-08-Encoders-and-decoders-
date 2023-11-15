@@ -55,42 +55,69 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
 
+Step1:create module encoder and decoder.
 
+Step-2:Get inputs and outputs for encoders and decoders.
+
+Step-3:perform or operation for encoder and and logic for decoders.
+
+Step-4:perform RTL LOGIC and get waveform.
+
+Step-5:End the module.
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: SRI SAI PRIYA.S
+RegisterNumber:  212222240103
 
+encoder :
+module encoder (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+or(a0,y7,y5,y3,y1);
+or(a1,y7,y6,y3,y2);
+or(a2,y7,y6,y5,y4);
+endmodule
+```
+```
+decoder :
+module decoder (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input a0,a1,a2;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+wire a0bar,a1bar,a2bar;
+not(a0bar,a0);
+not(a1bar,a1);
+not(a2bar,a2);
+and(y0,a0bar,a1bar,a2bar);
+and(y1,a0,a1bar,a2bar);
+and(y2,a0bar,a1,a2bar);
+and(y3,a0,a1,a2bar);
+and(y4,a0bar,a1bar,a2);
+and(y5,a0,a1bar,a2);
+and(y6,a0bar,a1,a2);
+and(y7,a0,a1,a2);
+endmodule
+```
+### RTL LOGIC 
 
+![image](https://github.com/SriSaiPriyaSenthilvel/Experiment-08-Encoders-and-decoders-/assets/119475702/f3bae42f-58b8-437a-9c72-29ddb26bdffa)
 
-
-
-
-### RTL LOGIC  
-
-
-
-
-
-
-
+![image](https://github.com/SriSaiPriyaSenthilvel/Experiment-08-Encoders-and-decoders-/assets/119475702/cd97dced-6539-442a-af17-d9a234f3599b)
 
 ### TIMING DIGRAMS  
 
+![image](https://github.com/SriSaiPriyaSenthilvel/Experiment-08-Encoders-and-decoders-/assets/119475702/e955b537-972b-4bcd-a196-ad260e688358)
 
-
-
+![image](https://github.com/SriSaiPriyaSenthilvel/Experiment-08-Encoders-and-decoders-/assets/119475702/f66bf193-dff4-4402-b63b-066cb4ea8b92)
 
 ### TRUTH TABLE 
 
+![image](https://github.com/SriSaiPriyaSenthilvel/Experiment-08-Encoders-and-decoders-/assets/119475702/512da42c-b81d-4bef-9d2f-239e4943f16c)
 
-
-
-
+![image](https://github.com/SriSaiPriyaSenthilvel/Experiment-08-Encoders-and-decoders-/assets/119475702/c3c46cb8-9c96-40ed-afa1-eee1acc309d9)
 
 ### RESULTS 
+
+Thus the program to design encoder and decoder is executed successfully .
